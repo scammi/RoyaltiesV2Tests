@@ -49,29 +49,31 @@ describe("V2", function () {
       expect(annuitiesOnStart?.value).to.equal(ethers.BigNumber.from("0"));
     }  
 
+    // Set annuities
     const setNewAnnuityPercentage = await chargeSetting.connect(myWallet).setCreatorAnnuities(protronBAdress, protonId, myWallet.address, ethers.BigNumber.from("400"));
     await setNewAnnuityPercentage.wait()
 
     console.log(setNewAnnuityPercentage)
 
-    const newAnnuityPercentage = await chargeSetting.connect(myWallet).getCreatorAnnuities(protronBAdress, protonId);
-    console.log(newAnnuityPercentage);
-
-    // expect(newAnnuityPercentage?.value).to.equal(ethers.BigNumber.from(500));
-
+    // const newAnnuityPercentage = await chargeSetting.connect(myWallet).getCreatorAnnuities(protronBAdress, protonId);
+    // console.log(newAnnuityPercentage);
     // console.log(newAnnuityPercentage?.value)
+
+    // Set royalties
+    // for( let royaltyPct = 100; royaltyPct <= 1000; royaltyPct += 100) {
+    //   it(`Modify proton royalties to ${royaltyPct == 0 ? 0 : royaltyPct/10}%`, async function() {
+  
+    //     const setNewRoyaltyPercentage = await protonContract.connect(myWallet).setRoyaltiesPct(protonId, royaltyPct);
+    //     await setNewRoyaltyPercentage.wait()
+    
+    //     const newSetRoyaltyPercentage = await protonContract.connect(myWallet).getCreatorRoyaltiesPct(protonId);
+    //     expect(newSetRoyaltyPercentage).to.equal(ethers.BigNumber.from(newSetRoyaltyPercentage));
+    //   })
+    // }
   })
 
-  // for( let royaltyPct = 100; royaltyPct <= 1000; royaltyPct += 100) {
-  //   it(`Modify proton royalties to ${royaltyPct == 0 ? 0 : royaltyPct/10}%`, async function() {
-
-  //     const setNewRoyaltyPercentage = await protonContract.connect(myWallet).setRoyaltiesPct(protonId, royaltyPct);
-  //     await setNewRoyaltyPercentage.wait()
   
-  //     const newSetRoyaltyPercentage = await protonContract.connect(myWallet).getCreatorRoyaltiesPct(protonId);
-  //     expect(newSetRoyaltyPercentage).to.equal(ethers.BigNumber.from(newSetRoyaltyPercentage));
-  //   })
-  // }
+
 
 
 
