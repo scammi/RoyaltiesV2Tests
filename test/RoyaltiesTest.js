@@ -31,7 +31,7 @@ const dai = new ethers.Contract(daiAddress, daiABI, provider);
 describe("V2", function () {
   const TOKEN_URI = 'https://gateway.pinata.cloud/ipfs/QmQxDjEhnYP6QAtLRyLV9N7dn1kDigz7iWnx5psmyXqy35/1';
 
-  let protonId = 2;
+  let protonId = 0;
   it("Creates new particles with 0% royalties & annuities", async() => {
     if(!Boolean(protonId)) {
       protonId = await protonBContract.connect(myWallet).callStatic.createBasicProton(
