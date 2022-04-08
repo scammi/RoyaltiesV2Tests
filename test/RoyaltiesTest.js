@@ -83,24 +83,24 @@ describe("V2", function () {
   //   const allowDai = await dai.connect(myWallet)['approve(address,uint256)'](protonBAddress, ethers.utils.parseEther('1'));
   //   await allowDai.wait()
 
-  //   const newEnergizeProtonID = await protonBContract.connect(myWallet).callStatic.createBasicProton(
-  //     myWallet.address,
-  //     myWallet.address,
-  //     TOKEN_URI 
-  //   );
+    const newEnergizeProtonID = await protonBContract.connect(myWallet).callStatic.createBasicProton(
+      myWallet.address,
+      myWallet.address,
+      TOKEN_URI 
+    );
 
-  //   console.log('New token:',newEnergizeProtonID.toNumber(), '\n');
-  //   const newEnergizeProtonTrx = await protonBContract.connect(myWallet).createChargedParticle(
-  //     myWallet.address, 
-  //     myWallet.address,
-  //     '0x6d46b37708da7ed4e5c4509495768fecd3d17c01', //referer
-  //     TOKEN_URI,
-  //     'aave',
-  //     daiAddress,
-  //     ethers.utils.parseEther('1'),
-  //     1000 //annuity
-  //   );
-  //   await newEnergizeProtonTrx.wait();
+    console.log('New token:',newEnergizeProtonID.toNumber(), '\n');
+    const newEnergizeProtonTrx = await protonBContract.connect(myWallet).createChargedParticle(
+      myWallet.address, 
+      myWallet.address,
+      '0x6d46b37708da7ed4e5c4509495768fecd3d17c01', //referer
+      TOKEN_URI,
+      'aave',
+      daiAddress,
+      ethers.utils.parseEther('1'),
+      1000 //annuity
+    );
+    await newEnergizeProtonTrx.wait();
 
   //   // console.log(newEnergizeProtonTrx);
 
